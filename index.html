@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=yes">
+    <meta name="theme-color" content="#187ab2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#187ab2">
+    <title>Trump</title>
+</head>
+
+<body>
+    <div id="center">
+        <p>
+            Click on Trump
+        </p>
+        <img src="http://coldfrontmag.com/wp-content/uploads/2016/11/Angry-Trump.jpg" id="trump" alt="Mad Trump" />
+        <audio id="audio" src="" />
+    </div>
+    <script>
+        var trump = document.getElementById("trump");
+        var audio = document.getElementById("audio");
+
+        function play(number) {
+            audio.src = "audio/trump" + number + ".ogg";
+            audio.play();
+        }
+
+        if (trump != null) {
+            trump.onclick = function () {
+                trump.src = "img/trump_smile.jpg";
+                var i = Math.floor((Math.random() * 10) + 1);
+                if (i < 10)
+                    i = "0" + i;
+                play(i);
+                setTimeout("trump.src = 'img/trump_angry.jpg'", 5000);
+            }
+        }
+    </script>
+</body>
+
+</html>
